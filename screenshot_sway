@@ -137,9 +137,9 @@ class Image:
             call(['wl-copy'], stdin=file_path)
 
     def copy_path(self):
-        if not call(['wl-copy', self.file_path]):
-            print('Could not copy to clipboard')
-            sys.exit(1)
+        call(['wl-copy', self.file_path])
+        print('Could not copy to clipboard')
+        sys.exit(1)
 
     def upload(self):
         filename = dmenu('Filename', [])
