@@ -145,6 +145,7 @@ class Image:
         filename = dmenu('Filename', [])
         destination = "{:s}:{:s}".format(config.get('server'), os.path.join(config.get('server_path'), filename))
         run(['scp', self.file_path, destination])
+        run(['wl-copy', config.get('url').format(filename)])
 
 
 def get_dmenu_command(prompt):
